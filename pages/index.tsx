@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="py-16 px-8 grid grid-cols-3 gap-8">
               
-              {data.map(item=><ProductCard data={item} />)}
+              {data.map((item : any)=><ProductCard key={item.id} data={item} />)}
             </div>
         </div>
 }

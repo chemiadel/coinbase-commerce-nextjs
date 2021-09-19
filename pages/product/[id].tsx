@@ -2,15 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
-import ProductCard from '../../comps/product'
-// import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [data, setData]=useState()
+  const [data, setData]=useState<any>()
     const {id}= useRouter().query
 
   useEffect(() =>{
-    if(!id) return null
+    if(!id) return 
     fetch('/api/coinbase/checkout?id='+id)
       .then(res=> res.json())
       .then(json=> setData(json.data))

@@ -8,7 +8,7 @@ export default function handler(
 
     return fetch('https://api.commerce.coinbase.com/checkouts',{
         headers:{
-            'X-CC-Api-Key':process.env.COINBASE_API_KEY,
+            'X-CC-Api-Key':process.env.COINBASE_API_KEY || '',
             'X-CC-Version':'2018-03-22'
         }
     }).then(res=>res.json())
